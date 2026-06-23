@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import IndustryCard from "./IndustryCard";
-
-// Import industry logo assets
 import pharmaIcon from "../../assets/images/logos/pharma.png";
 import automobileIcon from "../../assets/images/logos/automobile.png";
 import chemicalIcon from "../../assets/images/logos/chemical.png";

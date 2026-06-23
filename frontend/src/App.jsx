@@ -9,11 +9,11 @@ function App() {
     <Router>
       <div className="min-h-screen bg-white relative">
         {/* Sticky Vertical Logo on Left */}
-        <div className="fixed left-0 top-[25%] z-40 hidden md:block pointer-events-none">
+        <div className="fixed left-0 top-[25%] z-40 block pointer-events-none">
           <img 
             src="/Home_page/penta-sticky.png" 
             alt="Penta Freight" 
-            className="w-[32px] h-auto pointer-events-auto shadow-md"
+            className="w-[24px] md:w-[32px] h-auto pointer-events-auto shadow-md"
           />
         </div>
 

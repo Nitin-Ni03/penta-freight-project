@@ -97,17 +97,39 @@ const Services = () => {
                   left: card.reverse ? "6%" : undefined,
                 }}
               >
-                <h2 style={{ fontSize: "32px", fontWeight: "600" }}>
+                <h2 style={{ fontSize: "32px", fontWeight: "600", color: "#fff" }}>
                   {card.title}
                 </h2>
 
                 {card.description.map((text, i) => (
-                  <p key={i} style={{ fontSize: "15px", lineHeight: "1.7", color: "#374151" }}>
+                  <p key={i} style={{ fontSize: "15px", lineHeight: "1.7", color: "#fff" }}>
                     {text}
                   </p>
                 ))}
 
-                <div style={{ marginTop: "18px" }}>
+                {/* Tags Display */}
+                {card.tags && card.tags.length > 0 && (
+                  <div style={{ marginTop: "20px", display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                    {card.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          border: "1px solid rgba(255, 255, 255, 0.5)",
+                          borderRadius: "20px",
+                          padding: "8px 14px",
+                          fontSize: "13px",
+                          color: "#fff",
+                          backgroundColor: "rgba(255, 255, 255, 0.1)",
+                          backdropFilter: "blur(10px)",
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <div style={{ marginTop: "20px" }}>
                   <HoverButton text="Read More" hoverText="Let's Go" />
                 </div>
               </div>
@@ -196,6 +218,18 @@ const Services = () => {
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            min-height: 450px;
+          }
+
+          .services-card-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 1;
           }
 
           .services-card-image {
@@ -203,6 +237,12 @@ const Services = () => {
             display: block;
             object-fit: cover;
             min-height: 450px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
           }
 
           .services-card-content {
@@ -211,6 +251,7 @@ const Services = () => {
             transform: translateY(-50%);
             width: 38%;
             background: transparent;
+            z-index: 2;
           }
 
           .services-bottom-grid {
@@ -250,11 +291,18 @@ const Services = () => {
               display: flex !important;
               flex-direction: column !important;
               border-radius: 16px !important;
+              min-height: auto !important;
             }
-            
+
+            .services-card-wrapper::before {
+              display: none !important;
+            }
+
             .services-card-image {
+              position: relative !important;
               min-height: 250px !important;
               height: 250px !important;
+              width: 100% !important;
             }
             
             .services-card-content {
@@ -266,16 +314,25 @@ const Services = () => {
               left: auto !important;
               padding: 24px !important;
               background: #fff !important;
+              color: #000 !important;
             }
             
             .services-card-content h2 {
               font-size: 24px !important;
               margin-bottom: 12px !important;
+              color: #000 !important;
             }
             
             .services-card-content p {
               font-size: 14px !important;
               line-height: 1.6 !important;
+              color: #374151 !important;
+            }
+
+            .services-card-content > div > span {
+              border-color: rgba(0, 0, 0, 0.2) !important;
+              color: #000 !important;
+              background-color: rgba(0, 0, 0, 0.05) !important;
             }
 
             .services-bottom-grid {

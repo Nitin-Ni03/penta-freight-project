@@ -121,7 +121,7 @@ src/
 - Implement proper error boundaries
 - Optimize re-renders using React.memo when needed
 
-## 📱 Responsive Design
+## � Responsive Design
 
 The application is fully responsive with breakpoints optimized for:
 - Mobile devices (320px and up)
