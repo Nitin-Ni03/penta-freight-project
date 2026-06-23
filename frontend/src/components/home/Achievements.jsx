@@ -27,12 +27,8 @@ const AnimatedCounter = ({ target, suffix = "", duration = 1500 }) => {
     if (!hasAnimated) return;
 
     const targetNum = parseInt(target, 10);
-    if (isNaN(targetNum)) {
-      setCount(target);
-      return;
-    }
+    if (isNaN(targetNum)) return;
 
-    let start = 0;
     const startTime = performance.now();
 
     const updateCount = (currentTime) => {

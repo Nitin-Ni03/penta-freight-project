@@ -4,7 +4,7 @@ import { useState } from "react";
 const Packaging = () => {
   const [hoveredCard, setHoveredCard] = useState(null); // 'parcel', 'pallet', or null
 
-  const handleCardClick = (id) => {
+  const handleCardClick = () => {
     const section = document.getElementById("series-guide-section");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
