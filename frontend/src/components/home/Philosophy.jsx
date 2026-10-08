@@ -92,13 +92,9 @@ const Philosophy = () => {
             textAlign: "center",
           }}
         >
-          <h2 className="section3-title">
-            {section3Data.title}
-          </h2>
+          <h2 className="section3-title">{section3Data.title}</h2>
 
-          <p className="section3-desc">
-            {section3Data.description}
-          </p>
+          <p className="section3-desc">{section3Data.description}</p>
 
           <div className="section3-btn">
             <HoverButton
